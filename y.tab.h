@@ -44,7 +44,7 @@
      TEXT_FIELD = 260,
      TEXT_AREA = 261,
      TABLE_NAME = 262,
-     NAME = 263,
+     EQ = 263,
      IDENTIFIER = 264
    };
 #endif
@@ -54,14 +54,22 @@
 #define TEXT_FIELD 260
 #define TEXT_AREA 261
 #define TABLE_NAME 262
-#define NAME 263
+#define EQ 263
 #define IDENTIFIER 264
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+typedef union YYSTYPE
+#line 15 "ag.y"
+{
+    int num;                 /* integer value */
+    char* value;                /* symbol table index */
+}
+/* Line 1529 of yacc.c.  */
+#line 72 "y.tab.h"
+	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 # define YYSTYPE_IS_TRIVIAL 1

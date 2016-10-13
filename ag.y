@@ -9,9 +9,13 @@
 %token TEXT_FIELD
 %token TEXT_AREA
 %token TABLE_NAME
-%token NAME
+%token EQ
 %token IDENTIFIER
-%left "=" '(' ')'
+%left '='
+%union {
+    int num;                 /* integer value */
+    char* value;                /* symbol table index */
+};
 
 %%
 
@@ -25,12 +29,12 @@ sql:
             	 	;
 
 create_database: 
-                	DATABASE "=" IDENTIFIER { printf("create database");}
+                	DATABASE { printf("Sad");}
                 	;
 
 create_table: 
-                	TABLE_NAME { printf("create table");}
-                	;
+                    TABLE_NAME { printf("create table");}
+                    ;
 
 %%
 

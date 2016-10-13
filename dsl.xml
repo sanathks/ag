@@ -1,3 +1,3 @@
-<ELEMENT dbName=database_name />
+<ELEMENT dbName=bac />
 <ELEMENT tableName />
 <ELEMENT textField />
