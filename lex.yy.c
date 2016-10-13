@@ -371,7 +371,7 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[28] =
     {   0,
-        0,    0,    9,    7,    6,    8,    5,    4,    7,    7,
+        0,    0,    9,    7,    6,    6,    4,    5,    7,    7,
         7,    4,    3,    3,    3,    3,    3,    3,    3,    3,
         3,    1,    3,    3,    3,    2,    0
     } ;
@@ -381,17 +381,17 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    1,    1,    1,    1,    1,    1,    4,
-        4,    4,    4,    1,    4,    4,    4,    5,    6,    6,
-        6,    6,    6,    6,    6,    6,    6,    1,    4,    4,
-        4,    4,    1,    1,    7,    7,    7,    7,    7,    7,
+        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    4,    5,    5,
+        5,    5,    5,    5,    5,    5,    5,    6,    1,    1,
+        1,    1,    1,    1,    7,    7,    7,    7,    7,    7,
         7,    7,    7,    7,    7,    7,    7,    8,    7,    7,
         7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
         1,    1,    1,    1,    1,    1,    9,   10,    7,   11,
 
        12,    7,    7,    7,    7,    7,    7,   13,   14,    7,
         7,    7,    7,    7,    7,   15,    7,    7,    7,    7,
-        7,    7,    4,    1,    4,    1,    1,    1,    1,    1,
+        7,    7,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -410,14 +410,14 @@ static yyconst flex_int32_t yy_ec[256] =
 
 static yyconst flex_int32_t yy_meta[16] =
     {   0,
-        1,    1,    1,    1,    2,    2,    2,    2,    2,    2,
+        1,    1,    1,    2,    2,    1,    2,    2,    2,    2,
         2,    2,    2,    2,    2
     } ;
 
 static yyconst flex_int16_t yy_base[29] =
     {   0,
-        0,    0,   34,   35,   35,   35,   35,   11,    0,   23,
-       23,   13,    0,   23,   20,   20,   15,   13,   14,   13,
+        0,    0,   34,   35,   35,   35,   12,   35,    0,   23,
+       23,   14,    0,   23,   20,   20,   15,   13,   14,   13,
        16,    0,   14,    8,    9,    0,   35,   18
     } ;
 
@@ -430,7 +430,7 @@ static yyconst flex_int16_t yy_def[29] =
 
 static yyconst flex_int16_t yy_nxt[51] =
     {   0,
-        4,    5,    6,    7,    4,    8,    9,    9,    9,    9,
+        4,    5,    6,    4,    7,    8,    9,    9,    9,    9,
        10,    9,    9,    9,   11,   12,   12,   12,   12,   13,
        26,   25,   24,   23,   22,   21,   20,   19,   18,   17,
        16,   15,   14,   27,    3,   27,   27,   27,   27,   27,
@@ -440,7 +440,7 @@ static yyconst flex_int16_t yy_nxt[51] =
 static yyconst flex_int16_t yy_chk[51] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    8,    8,   12,   12,   28,
+        1,    1,    1,    1,    1,    7,    7,   12,   12,   28,
        25,   24,   23,   21,   20,   19,   18,   17,   16,   15,
        14,   11,   10,    3,   27,   27,   27,   27,   27,   27,
        27,   27,   27,   27,   27,   27,   27,   27,   27,   27
@@ -747,41 +747,40 @@ case 3:
 YY_RULE_SETUP
 #line 11 "ag.l"
 { 
-						    yylval.value = yytext;
 						   return IDENTIFIER; 
 						}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 15 "ag.l"
+#line 14 "ag.l"
 {
-              			  yylval.num = atoi(yytext);
               			  return INTEGER;
            				}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 20 "ag.l"
+#line 18 "ag.l"
 {
                			 return *yytext;
            				}
 	YY_BREAK
 case 6:
+/* rule 6 can match eol */
 YY_RULE_SETUP
-#line 24 "ag.l"
+#line 22 "ag.l"
 ;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 26 "ag.l"
+#line 24 "ag.l"
 ;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 28 "ag.l"
+#line 26 "ag.l"
 ECHO;
 	YY_BREAK
-#line 785 "lex.yy.c"
+#line 784 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1778,7 +1777,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 28 "ag.l"
+#line 26 "ag.l"
 
 
 

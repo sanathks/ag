@@ -1,2 +1,5 @@
-dbName : test
-tableName : test_table
+dbName : dd
+tableName : ds
+textField : name
+textArea : adddress
+checkbox : single

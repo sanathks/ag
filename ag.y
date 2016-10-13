@@ -3,7 +3,7 @@
     int yylex(void);
     void yyerror(char *);
 %}
-%start program
+%start sql
 %token INTEGER
 %token DATABASE
 %token TEXT_FIELD
@@ -19,22 +19,18 @@
 
 %%
 
-program:
-                  	  sql {;}
-                    | program sql;  
-                    ;
 sql:	        
-            	 	  create_database
-            	 	| create_table
+            	 	  create_database { printf("asd");}
+             	 	| sql create_database
             	 	;
 
 create_database: 
                 	DATABASE { printf("Sad");}
                 	;
 
-create_table: 
-                    TABLE_NAME { printf("create table");}
-                    ;
+// create_table: 
+//                     TABLE_NAME { printf("create table");}
+//                     ;
 
 %%
 
